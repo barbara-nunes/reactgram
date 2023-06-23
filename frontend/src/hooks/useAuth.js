@@ -18,4 +18,4 @@ export const useAuth = () => {
   }, [user]);
 
   return { auth, loading };
-};
+}
