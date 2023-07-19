@@ -35,7 +35,7 @@ const login = async(data) => {
       .catch((err) => err);
 
           //so salva se tiver id
-      if (res._id) {
+      if (res) {
         localStorage.setItem("user", JSON.stringify(res));
       }
 

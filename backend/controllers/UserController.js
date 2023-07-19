@@ -70,10 +70,10 @@ const register = async(req, res) => {
         }
 
         //return user with token
-        res.status(201).json({
-            _id: User._id,
+        res.status(200).json({
+            _id: user._id,
             profileImage: user.profileImage,
-            token: generateToken(User._id),
+            token: generateToken(user._id),
         });
     };
 
@@ -95,9 +95,9 @@ const register = async(req, res) => {
     }
 
     const reqUser = req.user
-
-    const user = await User.findById(mongoose.Types.ObjectId(reqUser._id)).select("-password")
-
+   
+    const user = await User.findById(reqUser._id).select("-password")
+    console.log("user ===", user)
     if(name) {
         user.name = name
     }
