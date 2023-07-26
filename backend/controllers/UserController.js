@@ -129,10 +129,10 @@ const register = async(req, res) => {
     const {id} = req.params 
 
     try {
-        const user = await User.findById(mongoose.Types.ObjectId(id)).select(
+        const user = await User.findById(id).select(
             "-password"
         );
-
+     
         //check if user exists
     if(!user) {
         res.status(404).json({errors: ["Usuário não encontrado."]})

@@ -21,7 +21,7 @@ import {
 const Navbar = () => {
   const { auth } = useAuth();
   const { user } = useSelector((state) => state.auth);
-
+  console.log("user", user)
   const navigate = useNavigate()
 
   const dispatch = useDispatch()

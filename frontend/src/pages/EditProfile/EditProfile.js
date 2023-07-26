@@ -66,10 +66,16 @@ const EditProfile = () => {
         const userFormData = Object.keys(userData).forEach((key) =>
           formData.append(key, userData[key])
         );
-  
+        
 
-        console.log("form", userFormData)
+        
+      
+       
         formData.append("user", userFormData);
+
+        for (var pair of formData.entries()) {
+          console.log(pair[0]+ ', ' + pair[1]); 
+        }
 
         await dispatch(updateProfile(formData));
 
